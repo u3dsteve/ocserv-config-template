@@ -1,0 +1,12 @@
+[Unit]
+Description=ocserv firewall — isolated OCSERV-* chains with self-healing jump position
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/etc/ocserv/ocserv-firewall.sh start
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
