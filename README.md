@@ -1,4 +1,9 @@
 # ocserv-config-template
+You no longer need config firewall manually, just create a one system service. 
+
+
+
+
 There is a easy way to setup your ocserv server.
 
 This article will teach you how to set up an OpenConnect server on a Debian system in five minutes, for use with AnyConnect/OpenConnect clients.
