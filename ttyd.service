@@ -1,0 +1,25 @@
+[Unit]
+Description=ttyd Web SSH Terminal
+After=network.target
+
+[Service]
+Type=simple
+
+User=root
+Group=root
+
+ExecStart=/usr/bin/ttyd \
+    -i 0.0.0.0 \
+    -p 8443 \
+    -S \
+    -C /etc/ssl/ttyd/server.pem \
+    -K /etc/ssl/ttyd/server.key \
+    -c "user:password" \
+    -W \
+    /bin/bash
+
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
